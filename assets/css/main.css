@@ -3162,7 +3162,7 @@
 
 	#banner {
 		background-attachment: scroll,							fixed;
-		background-color: #666;
+		background-color: #ff0000;
 		background-image: url("./images/banner.jpg");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
