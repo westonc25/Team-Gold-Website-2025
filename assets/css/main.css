@@ -7,10 +7,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-* {
-    outline: none !important;
-    border: none !important;
-}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -3024,20 +3020,7 @@ input, select, textarea {
 				width: 4rem;
 			}
 
-			.gallery .modal:after {
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='64px' height='64px' viewBox='0 0 64 64' zoomAndPan='disable'%3E%3Cstyle%3Eline %7Bstroke: %23000000%3Bstroke-width: 2px%3B%7D%3C/style%3E%3Cline x1='20' y1='20' x2='44' y2='44' /%3E%3Cline x1='20' y1='44' x2='44' y2='20' /%3E%3C/svg%3E");
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: 3rem;
-				content: '';
-				cursor: pointer;
-				display: block;
-				height: 4rem;
-				position: absolute;
-				right: 0.5rem;
-				top: 0.5rem;
-				width: 4rem;
-			}
+			
 
 			.gallery .modal .inner {
 				-moz-transform: translateY(0.75rem);
