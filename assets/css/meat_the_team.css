@@ -27,9 +27,8 @@
 		border: 0;
 		font-size: 100%;
 		font: inherit;
-		display: block;
 		margin: auto;
-		/*vertical-align: baseline;*/
+		vertical-align: baseline;
 	}
 
 	article, aside, details, figcaption, figure,
@@ -252,73 +251,37 @@
 		text-align: right;
 	}
 
-/* Team page: float-based columns (scoped) */
-.team-page .row {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: stretch; /* make children (.column) equal height */
-	margin-left: -8px; /* compensate for column padding */
-}
 
+/* Three columns side by side */
 .team-page .column {
-	/* participate in the team flex row; columns will be equal height */
+	/* participate in the flex row so columns align correctly */
 	box-sizing: border-box;
 	flex: 0 0 33.3333%;
 	max-width: 33.3333%;
 	margin-bottom: 16px;
 	padding: 0 8px;
-	display: flex;
-	flex-direction: column;
-
-  /* ensure the card child stretches to fill the column */
-  align-items: stretch;
 }
 
+/* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
 	.team-page .column {
 		flex: 0 0 100%;
 		max-width: 100%;
-		display: flex;
+		display: block;
 	}
 }
 
+/* Add some shadows to create a card effect */
 .team-page .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Make card fill its column height and stack image + content vertically */
-.team-page .card {
-	display: flex;
-	flex-direction: column;
-	flex: 1 1 auto;
-
-	/* ensure card fills the available column height */
-	height: 100%;
-}
-
-/* Uniform image sizing so cards align visually */
-.team-page .card img {
-	width: 100%;
-	height: 220px; /* adjust as desired */
-	object-fit: cover;
-	display: block;
-
-	/* don't allow the image to shrink and change card height */
-	flex-shrink: 0;
-}
-
-/* Make the inner container expand and allow pushing the contact button to the bottom */
+/* Some left and right padding inside the container */
 .team-page .container {
 	padding: 0 16px;
-	display: flex;
-	flex-direction: column;
-	flex: 1 1 auto;
 }
 
-/* Push the last paragraph (button) to the bottom of the container */
-.team-page .container p:last-child {
-	margin-top: auto;
-}
+/* Clear floats */
 .team-page .container::after, .team-page .row::after {
 	content: "";
 	clear: both;
@@ -2159,24 +2122,25 @@
 
 /* Form */
 
-	form {
-		margin: 0 0 2em 0;
+	.team-page .title {
+		color: grey;
+	}
+	.team-page .button {
+		border: none;
+		outline: 0;
+		display: inline-block;
+		padding: 8px;
+		color: white;
+		background-color: #000;
+		text-align: center;
+		cursor: pointer;
+		width: 100%;
 	}
 
-	label {
-		color: #646464;
-		display: block;
-		font-size: 0.9em;
-		font-weight: 300;
-		margin: 0 0 1em 0;
+	.team-page .button:hover {
+		background-color: #555;
 	}
-
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	select,
-	textarea {
-		-moz-appearance: none;
+	input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
