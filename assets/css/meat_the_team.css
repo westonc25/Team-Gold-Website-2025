@@ -253,21 +253,30 @@
 
 
 /* Three columns side by side */
+.team-page .row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+	align-items: start; /* ensure items align to top of each grid cell */
+}
 .team-page .column {
 	/* participate in the flex row so columns align correctly */
 	box-sizing: border-box;
-	flex: 0 0 33.3333%;
-	max-width: 33.3333%;
+	width: 100%;
 	margin-bottom: 16px;
 	padding: 0 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 }
 
 /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
+	.team-page .row {
+		grid-template-columns: 1fr;
+	}
 	.team-page .column {
-		flex: 0 0 100%;
-		max-width: 100%;
-		display: block;
+		padding: 0;
 	}
 }
 
