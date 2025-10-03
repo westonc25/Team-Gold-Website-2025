@@ -254,27 +254,61 @@
 
 /* Team page: float-based columns (scoped) */
 .team-page .row {
-	display: block; /* allow float columns to align correctly inside the team section */
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch; /* make children (.column) equal height */
+	margin-left: -8px; /* compensate for column padding */
 }
 
 .team-page .column {
-	float: left;
-	width: 33.3%;
+	/* participate in the team flex row; columns will be equal height */
+	box-sizing: border-box;
+	flex: 0 0 33.3333%;
+	max-width: 33.3333%;
 	margin-bottom: 16px;
 	padding: 0 8px;
-	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 }
 
 @media screen and (max-width: 650px) {
 	.team-page .column {
-		width: 100%;
-		display: block;
-		float: none;
+		flex: 0 0 100%;
+		max-width: 100%;
+		display: flex;
 	}
 }
 
 .team-page .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Make card fill its column height and stack image + content vertically */
+.team-page .card {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
+/* Uniform image sizing so cards align visually */
+.team-page .card img {
+	width: 100%;
+	height: 220px; /* adjust as desired */
+	object-fit: cover;
+	display: block;
+}
+
+/* Make the inner container expand and allow pushing the contact button to the bottom */
+.team-page .container {
+	padding: 0 16px;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
+/* Push the last paragraph (button) to the bottom of the container */
+.team-page .container p:last-child {
+	margin-top: auto;
 }
 
 .team-page .container {
