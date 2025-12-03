@@ -35,6 +35,9 @@
 		display: block;
 	}
 
+
+
+
 	body {
 		line-height: 1;
 	}
@@ -2325,6 +2328,110 @@
 					padding-bottom: 0;
 				}
 
+		/* Single-column layout */
+		.box.features .features-row.single-col section {
+			width: 100%;
+			padding: 3em;
+		}
+
+		/* Three-column layout */
+		.box.features .features-row.three-col section {
+			width: 33.333%;
+			padding: 3em;
+		}
+
+			.box.features .features-row.three-col section:nth-child(3n-2) {
+				padding-left: 0;
+			}
+
+			.box.features .features-row.three-col section:nth-child(3n-1) {
+				padding-left: 3em;
+				padding-right: 3em;
+			}
+
+				.box.features .features-row.three-col section:nth-child(3n-1):before {
+					background: #e5e5e5;
+					content: '';
+					display: block;
+					height: 100%;
+					margin-left: -3em;
+					position: absolute;
+					top: 0;
+					width: 2px;
+				}
+
+			.box.features .features-row.three-col section:nth-child(3n) {
+				padding-right: 0;
+			}
+
+				.box.features .features-row.three-col section:nth-child(3n):before {
+					background: #e5e5e5;
+					content: '';
+					display: block;
+					height: 100%;
+					margin-left: -3em;
+					position: absolute;
+					top: 0;
+					width: 2px;
+				}
+
+		/* Four-column layout */
+		.box.features .features-row.four-col section {
+			width: 25%;
+			padding: 3em;
+		}
+
+			.box.features .features-row.four-col section:nth-child(4n-3) {
+				padding-left: 0;
+			}
+
+			.box.features .features-row.four-col section:nth-child(4n-2) {
+				padding-left: 3em;
+				padding-right: 3em;
+			}
+
+				.box.features .features-row.four-col section:nth-child(4n-2):before {
+					background: #e5e5e5;
+					content: '';
+					display: block;
+					height: 100%;
+					margin-left: -3em;
+					position: absolute;
+					top: 0;
+					width: 2px;
+				}
+
+			.box.features .features-row.four-col section:nth-child(4n-1) {
+				padding-left: 3em;
+				padding-right: 3em;
+			}
+
+				.box.features .features-row.four-col section:nth-child(4n-1):before {
+					background: #e5e5e5;
+					content: '';
+					display: block;
+					height: 100%;
+					margin-left: -3em;
+					position: absolute;
+					top: 0;
+					width: 2px;
+				}
+
+			.box.features .features-row.four-col section:nth-child(4n) {
+				padding-right: 0;
+			}
+
+				.box.features .features-row.four-col section:nth-child(4n):before {
+					background: #e5e5e5;
+					content: '';
+					display: block;
+					height: 100%;
+					margin-left: -3em;
+					position: absolute;
+					top: 0;
+					width: 2px;
+				}
+
 		.box.special {
 			text-align: center;
 		}
@@ -2334,6 +2441,7 @@
 			display: block;
 			margin: 3em 0 3em -3em;
 			position: relative;
+			overflow: visible;
 			width: calc(100% + 6em);
 		}
 
@@ -2362,6 +2470,55 @@
 				.box .image.featured:last-child img {
 					border-radius: 0 0 6px 6px;
 				}
+						.image-zoom {
+			transition: transform 0.3s ease;
+			position: relative; /* create stacking context */
+			z-index: 2; /* place image above feature lines */
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			transform-origin: center center;
+			will-change: transform;
+			display: block;
+		}
+
+		.image-zoom:hover {
+			transform: scale(1.75); /* Slight zoom */
+			z-index: 999; /* ensure it sits on top of siblings while hovered */
+		}
+
+		/* Three-column image zoom (1.5x scale for smaller images) */
+		.image-zoom-3col {
+			transition: transform 0.3s ease;
+			position: relative;
+			z-index: 2;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			transform-origin: center center;
+			will-change: transform;
+			display: block;
+		}
+
+		.image-zoom-3col:hover {
+			transform: scale(2.75);
+			z-index: 999;
+		}
+
+		/* Four-column image zoom (1.35x scale for even smaller images) */
+		.image-zoom-4col {
+			transition: transform 0.3s ease;
+			position: relative;
+			z-index: 2;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			transform-origin: center center;
+			will-change: transform;
+			display: block;
+		}
+
+		.image-zoom-4col:hover {
+			transform: scale(3.5);
+			z-index: 999;
+		}
 
 /* Icon */
 
@@ -3468,6 +3625,7 @@
 
 				.box .image.featured {
 					margin-left: -2em;
+					overflow: visible;
 					width: calc(100% + 4em);
 				}
 
@@ -3722,6 +3880,7 @@
 
 				.box .image.featured {
 					margin-left: -2em;
+					overflow: visible;
 					width: calc(100% + 4em);
 				}
 
@@ -3860,6 +4019,7 @@
 				.box .image.featured {
 					border-radius: 0;
 					margin-left: -1em;
+					overflow: visible;
 					width: calc(100% + 2em);
 				}
 
@@ -3896,3 +4056,4 @@
 			}
 
 	}
+
