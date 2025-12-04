@@ -132,7 +132,7 @@
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #e89980;
+		color: #d6b04a;
 		text-decoration: none;
 	}
 
@@ -2118,8 +2118,8 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #e89980;
-			box-shadow: 0 0 0 2px #e89980;
+			border-color: #d6b04a;
+			box-shadow: 0 0 0 2px #d6b04a;
 		}
 
 	select {
@@ -2224,8 +2224,8 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e89980;
-			box-shadow: 0 0 0 1px #e89980;
+			border-color: #d6b04a;
+			box-shadow: 0 0 0 1px #d6b04a;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2595,7 +2595,7 @@
 			}
 
 			.icon.major.accent2 {
-				background: #e89980;
+				background: #d6b04a;
 				color: #ffffff;
 			}
 
@@ -3030,23 +3030,23 @@
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #e89980;
+			background-color: #d6b04a;
 			color: #ffffff !important;
 		}
 
-			input[type="submit"].primary:hover,
-			input[type="reset"].primary:hover,
-			input[type="button"].primary:hover,
-			.button.primary:hover {
-				background-color: #ecaa96;
-			}
+		input[type="submit"].primary:hover,
+		input[type="reset"].primary:hover,
+		input[type="button"].primary:hover,
+		.button.primary:hover {
+			background-color: #e8c86a;
+		}
 
-			input[type="submit"].primary:active,
-			input[type="reset"].primary:active,
-			input[type="button"].primary:active,
-			.button.primary:active {
-				background-color: #e4886a;
-			}
+		input[type="submit"].primary:active,
+		input[type="reset"].primary:active,
+		input[type="button"].primary:active,
+		.button.primary:active {
+			background-color: #b08a34;
+		}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
@@ -3311,7 +3311,7 @@
 			}
 
 			.dropotron li.active > a, .dropotron li.active > span, .dropotron li:hover > a, .dropotron li:hover > span {
-				background: #e89980;
+				background: #d6b04a;
 				color: #ffffff;
 			}
 
@@ -3482,11 +3482,12 @@
 					padding-left: 0;
 				}
 
+
 /* CTA */
 
 	#cta {
-		background: #e89980;
-		color: #f9e6df;
+		background: #d6b04a;
+		color: #fff8e6;
 		padding: 3.5em 0 4em 0;
 		text-align: center;
 	}
@@ -3507,7 +3508,7 @@
 		#cta .button {
 			box-shadow: none;
 			background: #fff;
-			color: #e89980;
+			color: #d6b04a;
 		}
 
 		#cta input[type="text"],
