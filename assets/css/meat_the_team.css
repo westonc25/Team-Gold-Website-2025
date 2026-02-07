@@ -254,22 +254,23 @@
 
 /* Team page: float-based columns (scoped) */
 .team-page .row {
-	display: block; /* allow float columns to align correctly inside the team section */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
 }
 
 .team-page .column {
-	float: left;
-	width: 33.3%;
+	width: calc(33.333% - 16px);
 	margin-bottom: 16px;
-	padding: 0 8px;
 	box-sizing: border-box;
+	flex: 0 0 calc(33.333% - 16px);
 }
 
 @media screen and (max-width: 650px) {
 	.team-page .column {
 		width: 100%;
-		display: block;
-		float: none;
+		flex: 0 0 100%;
 	}
 }
 
@@ -278,10 +279,10 @@
 }
 
 .team-page .container {
-	padding: 0 16px;
+	padding: 16px;
 }
 
-.team-page .container::after, .team-page .row::after {
+.team-page .container::after {
 	content: "";
 	clear: both;
 	display: table;
